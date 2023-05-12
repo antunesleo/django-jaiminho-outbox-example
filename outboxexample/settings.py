@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 
+from jaiminho.constants import PublishStrategyType
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -126,3 +128,7 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 KAFKA_HOST = os.environ.get("KAFKA_HOST")
+
+JAIMINHO_CONFIG = {
+   "PUBLISH_STRATEGY": PublishStrategyType.KEEP_ORDER,
+}
