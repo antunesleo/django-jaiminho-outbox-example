@@ -1,6 +1,7 @@
 import json
 import sys
 
+from jaiminho.send import save_to_outbox
 from kafka import KafkaProducer
 
 from outboxexample import settings
@@ -30,6 +31,7 @@ def dispatch_to_kafka(topic, message):
 NOTES_TOPIC = "notes"
 
 
+@save_to_outbox
 def publish_note_created(note_dict):
     message = {
         "name": "note-created",
