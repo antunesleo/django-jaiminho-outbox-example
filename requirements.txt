@@ -4,3 +4,4 @@ black==23.3
 pytest-django==4.5.2
 pytest==7.3.1
 pytest-mock==3.10
+django-jaiminho==1.1.1
